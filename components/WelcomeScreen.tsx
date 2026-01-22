@@ -8,7 +8,7 @@ interface WelcomeScreenProps {
 const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ onStart }) => {
   return (
     <div className="text-center animate-in fade-in zoom-in duration-500 max-w-4xl">
-      <h1 className="text-7xl md:text-9xl font-black mb-8 leading-tight">
+      <h1 className="text-4xl md:text-9xl font-black mb-8 leading-tight">
         LA SUERTE ESTÁ <br />
         <span className="text-sos-orange">DE TU LADO</span>
       </h1>
