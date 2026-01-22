@@ -8,11 +8,11 @@ interface WelcomeScreenProps {
 const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ onStart }) => {
   return (
     <div className="text-center animate-in fade-in zoom-in duration-500 max-w-4xl">
-      <h1 className="text-4xl md:text-9xl font-black mb-8 leading-tight">
+      <h1 className="text-2xl md:text-6xl font-black mb-8 leading-tight">
         LA SUERTE ESTÁ <br />
         <span className="text-sos-orange">DE TU LADO</span>
       </h1>
-      <p className="text-2xl md:text-3xl text-sos-dark/70 mb-12 max-w-2xl mx-auto font-medium">
+      <p className="text-2xl md:text-2xl text-sos-dark/70 mb-12 max-w-2xl mx-auto font-medium">
         ¡Prueba tu suerte con el Jackpot de SOS y gana premios exclusivos de asistencia vial y para el hogar!
       </p>
       
