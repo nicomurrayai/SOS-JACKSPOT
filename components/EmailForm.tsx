@@ -27,7 +27,7 @@ const EmailForm: React.FC<EmailFormProps> = ({ onSubmit, onBack }) => {
   return (
     <div className="w-full max-w-2xl bg-white p-4 rounded-[2.5rem] shadow-2xl animate-in slide-in-from-bottom-12 duration-500">
       <div className="text-center mb-10">
-        <h2 className="text-2xl font-black mb-4">¿QUIERES JUGAR?</h2>
+        <h2 className="text-2xl font-black mb-4">¿QUERES JUGAR?</h2>
         <p className="text-lg text-sos-dark/60 font-semibold">Ingresa tu correo para activar la Máquina Jackpot de SOS</p>
       </div>
       
