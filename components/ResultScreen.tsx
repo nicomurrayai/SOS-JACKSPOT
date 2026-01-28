@@ -76,7 +76,7 @@ const ResultScreen: React.FC<ResultScreenProps> = ({ result, onFinish }) => {
              {/* Botón más compacto */}
              <button
                onClick={onFinish}
-               className="w-full py-4 bg-sos-dark text-white rounded-xl text-xl font-black hover:bg-sos-dark/90 transition-colors"
+               className="w-full py-3 bg-sos-dark text-white rounded-xl text-lg font-black hover:bg-sos-dark/90 transition-colors"
              >
                SIGUIENTE JUGADOR
              </button>
@@ -85,7 +85,7 @@ const ResultScreen: React.FC<ResultScreenProps> = ({ result, onFinish }) => {
       )}
       
       {/* Texto de footer reducido y margen ajustado */}
-      <p className="mt-8 text-sos-dark/40 font-bold animate-pulse uppercase tracking-widest text-xs sm:text-sm">
+      <p className="mt-4 text-sos-dark/40 font-bold animate-pulse uppercase tracking-widest text-xs">
         Reiniciando en unos segundos...
       </p>
     </div>

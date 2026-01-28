@@ -10,7 +10,5 @@ export const SERVICE_ICONS: ServiceIcon[] = [
 export const CONFIG = {
   WIN_PROBABILITY: 0.15, // 15% chance to win
   SPIN_DURATION: 2000,   // ms
-  REEL_DELAY: 1500,       // stagger between reels
-  APP_NAME: 'SOS Asistencia',
-  BRAND_ORANGE: '#ff4020',
+  REEL_DELAY: 2000,       // stagger between reels
 };
