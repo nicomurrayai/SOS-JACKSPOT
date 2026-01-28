@@ -25,13 +25,13 @@ const EmailForm: React.FC<EmailFormProps> = ({ onSubmit, onBack }) => {
   };
 
   return (
-    <div className="w-full max-w-2xl bg-white p-6 rounded-[2.5rem] shadow-2xl animate-in slide-in-from-bottom-12 duration-500">
+    <div className="w-full max-w-2xl bg-white p-4 rounded-[2.5rem] shadow-2xl animate-in slide-in-from-bottom-12 duration-500">
       <div className="text-center mb-10">
-        <h2 className="text-3xl font-black mb-4">¿QUIERES JUGAR?</h2>
+        <h2 className="text-2xl font-black mb-4">¿QUIERES JUGAR?</h2>
         <p className="text-lg text-sos-dark/60 font-semibold">Ingresa tu correo para activar la Máquina Jackpot de SOS</p>
       </div>
       
-      <form onSubmit={handleSubmit} className="space-y-8">
+      <form onSubmit={handleSubmit} className="space-y-6">
         <div>
           <input
             type="email"
@@ -59,7 +59,7 @@ const EmailForm: React.FC<EmailFormProps> = ({ onSubmit, onBack }) => {
         <button
           type="button"
           onClick={onBack}
-          className="w-full py-4 text-sos-dark/40 font-bold text-lg hover:text-sos-dark transition-colors"
+          className="w-full py-4 text-sos-dark/40 font-bold text-base hover:text-sos-dark transition-colors"
         >
           ← REGRESAR
         </button>

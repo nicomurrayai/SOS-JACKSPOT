@@ -138,14 +138,11 @@ const SlotMachine: React.FC<SlotMachineProps> = ({ onComplete }) => {
             ))}
           </div>
 
-          {/* Branding on Machine */}
-          <div className="mt-6 text-center">
-            <h3 className="text-sos-white text-lg md:text-2xl font-black tracking-[0.2em] opacity-30 italic">SOS JACKPOT</h3>
-          </div>
+       
         </div>
       </div>
 
-      <div className="text-sos-dark/60 font-black text-xl md:text-3xl uppercase tracking-tighter text-center mt-4">
+      <div className="text-sos-dark/60 font-black text-xl uppercase tracking-tighter text-center mt-4">
         {!hasStarted ? "¡TIRA DE LA PALANCA!" : spinning.some(s => s) ? "GIRANDO..." : "¡BUENA SUERTE!"}
       </div>
     </div>
