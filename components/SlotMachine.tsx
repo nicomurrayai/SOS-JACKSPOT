@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { SERVICE_ICONS, CONFIG } from '../constants';
 import { ServiceIcon, GameResult } from '../types';
 
@@ -14,15 +14,13 @@ const SlotMachine: React.FC<SlotMachineProps> = ({ onComplete }) => {
     SERVICE_ICONS[2],
   ]);
   const [hasStarted, setHasStarted] = useState(false);
-  
+
   // Estado para la animación de la palanca
   const [isLeverPulled, setIsLeverPulled] = useState(false);
-  
-  // const audioRef = useRef<HTMLAudioElement | null>(null); // (Comentado si no se usa)
 
   const determineWin = (): GameResult => {
     const isWinner = Math.random() < CONFIG.WIN_PROBABILITY;
-    
+
     if (isWinner) {
       const winningIcon = SERVICE_ICONS[Math.floor(Math.random() * SERVICE_ICONS.length)];
       return { isWinner: true, winningIcon };
@@ -42,7 +40,7 @@ const SlotMachine: React.FC<SlotMachineProps> = ({ onComplete }) => {
 
   const startSpin = () => {
     if (hasStarted) return;
-    
+
     // Animación de la palanca
     setIsLeverPulled(true);
     setTimeout(() => setIsLeverPulled(false), 500);
@@ -51,13 +49,13 @@ const SlotMachine: React.FC<SlotMachineProps> = ({ onComplete }) => {
     setSpinning([true, true, true]);
 
     const finalOutcome = determineWin();
-    const finalIcons = finalOutcome.isWinner 
+    const finalIcons = finalOutcome.isWinner
       ? [finalOutcome.winningIcon!, finalOutcome.winningIcon!, finalOutcome.winningIcon!]
       : [
-          SERVICE_ICONS[Math.floor(Math.random() * SERVICE_ICONS.length)],
-          SERVICE_ICONS[Math.floor(Math.random() * SERVICE_ICONS.length)],
-          SERVICE_ICONS[Math.floor(Math.random() * SERVICE_ICONS.length)]
-        ];
+        SERVICE_ICONS[Math.floor(Math.random() * SERVICE_ICONS.length)],
+        SERVICE_ICONS[Math.floor(Math.random() * SERVICE_ICONS.length)],
+        SERVICE_ICONS[Math.floor(Math.random() * SERVICE_ICONS.length)]
+      ];
 
     // Staggered stop
     [0, 1, 2].forEach((i) => {
@@ -72,7 +70,7 @@ const SlotMachine: React.FC<SlotMachineProps> = ({ onComplete }) => {
           newIcons[i] = finalIcons[i];
           return newIcons;
         });
-        
+
         if (i === 2) {
           setTimeout(() => {
             onComplete(finalOutcome);
@@ -83,104 +81,104 @@ const SlotMachine: React.FC<SlotMachineProps> = ({ onComplete }) => {
   };
 
   return (
-    // Reduje gap-12 a gap-6 y max-w-5xl a max-w-xl para tablet chica
-    <div className="flex flex-col items-center gap-6 w-full max-w-xl mx-auto transform scale-90 sm:scale-100 origin-top">
-      
-      {/* Contenedor relativo */}
-      <div className="relative group">
-        
-        {/* ================= LA PALANCA (Versión Compacta) ================= */}
-        {/* Ajusté top y right para que esté más pegada y sea más chica */}
-        <div className="absolute top-[40px] -right-[35px] sm:-right-[45px] z-0 flex flex-col items-center">
-            {/* Base de la palanca */}
-            <div className="w-3 h-12 bg-gradient-to-r from-gray-600 to-gray-400 rounded-r-md shadow-lg absolute left-0 top-6" />
-            
-            {/* El brazo móvil (Altura reducida de h-64 a h-32/h-40) */}
-            <div 
-                onClick={!hasStarted ? startSpin : undefined}
-                className={`
-                    relative w-3 h-32 sm:h-40 cursor-pointer transition-transform duration-500 origin-bottom
-                    ${isLeverPulled ? 'rotate-180 scale-y-90' : 'rotate-0'}
-                    ${hasStarted ? 'cursor-not-allowed opacity-80' : 'hover:scale-105 active:scale-95'}
-                `}
-                style={{ transformOrigin: 'bottom center' }}
-            >
-                {/* La varilla metálica (más delgada) */}
-                <div className="absolute inset-x-0 bottom-0 top-6 mx-auto w-3 bg-gradient-to-r from-gray-300 via-white to-gray-400 rounded-full border border-gray-500 shadow-md" />
-                
-                {/* La perilla (Reducida de w-16 a w-10/12) */}
-                <div className="absolute -top-3 -left-3.5 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-red-500 via-red-600 to-red-800 shadow-[inset_0px_2px_4px_rgba(255,255,255,0.4),0px_2px_4px_rgba(0,0,0,0.6)] border border-red-900 z-10" />
-            </div>
+    // Aumenté max-w a 3xl y eliminé la reducción de escala para que se vea bien en Tablet
+    <div className="flex flex-col items-center gap-8 w-full max-w-3xl mx-auto transform transition-transform duration-300">
 
-            {/* Pivote inferior (Reducido) */}
-            <div className="absolute bottom-0 w-8 h-8 bg-gray-700 rounded-full border-2 border-gray-500 shadow-xl z-20 flex items-center justify-center">
-                 <div className="w-3 h-3 bg-gray-900 rounded-full opacity-50" />
-            </div>
+      {/* Contenedor relativo */}
+      <div className="relative group scale-100 md:scale-105 origin-top">
+
+        {/* ================= LA PALANCA (Versión Ajustada/Más Chica) ================= */}
+        <div className="absolute top-[80px] -right-[35px] md:-right-[45px] z-0 flex flex-col items-center">
+          {/* Base de la palanca (más corta) */}
+          <div className="w-3 h-12 bg-gradient-to-r from-gray-600 to-gray-400 rounded-r-lg shadow-lg absolute left-0 top-6" />
+
+          {/* El brazo móvil (Altura reducida de h-64 a h-40/52) */}
+          <div
+            onClick={!hasStarted ? startSpin : undefined}
+            className={`
+            relative w-3 h-40 md:h-52 cursor-pointer transition-transform duration-500 origin-bottom
+            ${isLeverPulled ? 'rotate-180 scale-y-90' : 'rotate-0'}
+            ${hasStarted ? 'cursor-not-allowed opacity-80' : 'hover:scale-105 active:scale-95'}
+        `}
+            style={{ transformOrigin: 'bottom center' }}
+          >
+            {/* La varilla metálica */}
+            <div className="absolute inset-x-0 bottom-0 top-6 mx-auto w-3 bg-gradient-to-r from-gray-300 via-white to-gray-400 rounded-full border border-gray-500 shadow-md" />
+
+            {/* La perilla (Reducida de w-16 a w-10/12) */}
+            <div className="absolute -top-3 -left-[14px] w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br from-red-500 via-red-600 to-red-800 shadow-[inset_0px_2px_4px_rgba(255,255,255,0.4),0px_2px_4px_rgba(0,0,0,0.6)] border border-red-900 z-10" />
+          </div>
+
+          {/* Pivote inferior (Reducido de w-12 a w-8/10) */}
+          <div className="absolute bottom-0 w-8 h-8 md:w-10 md:h-10 bg-gray-700 rounded-full border-4 border-gray-500 shadow-xl z-20 flex items-center justify-center">
+            <div className="w-3 h-3 bg-gray-900 rounded-full opacity-50" />
+          </div>
         </div>
         {/* ================= FIN DE PALANCA ================= */}
 
 
-        {/* CUERPO DE LA MÁQUINA (Padding y bordes reducidos) */}
-        <div className="relative z-10 p-5 sm:p-8 bg-sos-dark rounded-[2rem] shadow-[0_20px_40px_-10px_rgba(0,0,0,0.5)] border-t-[8px] border-sos-orange/30">
-          {/* Lights / Side Decorations (Más finas) */}
-          <div className="absolute top-0 left-0 h-full w-4 flex flex-col justify-around items-center py-6">
-              {[...Array(6)].map((_, i) => (
-                  <div key={i} className={`w-2 h-2 rounded-full ${hasStarted ? 'bg-sos-orange animate-pulse' : 'bg-white/20'}`} />
-              ))}
+        {/* CUERPO DE LA MÁQUINA (Padding aumentado) */}
+        <div className="relative z-10 p-6 md:p-10 bg-sos-dark rounded-[2.5rem] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.6)] border-t-[10px] border-sos-orange/30">
+          {/* Lights / Side Decorations */}
+          <div className="absolute top-0 left-0 h-full w-6 flex flex-col justify-around items-center py-8">
+            {[...Array(6)].map((_, i) => (
+              <div key={i} className={`w-3 h-3 rounded-full ${hasStarted ? 'bg-sos-orange animate-pulse' : 'bg-white/20'}`} />
+            ))}
           </div>
-          <div className="absolute top-0 right-0 h-full w-4 flex flex-col justify-around items-center py-6">
-              {[...Array(6)].map((_, i) => (
-                  <div key={i} className={`w-2 h-2 rounded-full ${hasStarted ? 'bg-sos-orange animate-pulse' : 'bg-white/20'}`} />
-              ))}
+          <div className="absolute top-0 right-0 h-full w-6 flex flex-col justify-around items-center py-8">
+            {[...Array(6)].map((_, i) => (
+              <div key={i} className={`w-3 h-3 rounded-full ${hasStarted ? 'bg-sos-orange animate-pulse' : 'bg-white/20'}`} />
+            ))}
           </div>
 
-          {/* Reels Container (Gap reducido) */}
-          <div className="flex gap-2 sm:gap-3 bg-sos-beige p-3 rounded-xl overflow-hidden border-4 border-sos-dark/20">
+          {/* Reels Container (Gap más amplio) */}
+          <div className="flex gap-3 md:gap-5 bg-sos-beige p-4 md:p-5 rounded-2xl overflow-hidden border-[6px] border-sos-dark/20">
             {[0, 1, 2].map((i) => (
               <Reel key={i} isSpinning={spinning[i]} icon={results[i]} />
             ))}
           </div>
 
           {/* Branding on Machine */}
-          <div className="mt-4 text-center">
-              <h3 className="text-sos-white text-base sm:text-lg font-black tracking-widest opacity-30 italic">SOS JACKPOT</h3>
+          <div className="mt-6 text-center">
+            <h3 className="text-sos-white text-lg md:text-2xl font-black tracking-[0.2em] opacity-30 italic">SOS JACKPOT</h3>
           </div>
         </div>
       </div>
 
-      <div className="text-sos-dark/50 font-black text-lg sm:text-xl uppercase tracking-tighter text-center">
+      <div className="text-sos-dark/60 font-black text-xl md:text-3xl uppercase tracking-tighter text-center mt-4">
         {!hasStarted ? "¡TIRA DE LA PALANCA!" : spinning.some(s => s) ? "GIRANDO..." : "¡BUENA SUERTE!"}
       </div>
     </div>
   );
 };
 
-// Componente Reel ajustado para tablet chica (tamaños w-20 a w-28 en vez de w-64)
+// Componente Reel ajustado para ser más grande (Tablet size)
+// w-28 a w-36 (aprox 144px ancho) y h-36 a h-48 (aprox 192px alto)
 const Reel: React.FC<{ isSpinning: boolean; icon: ServiceIcon }> = ({ isSpinning, icon }) => {
   return (
-    <div className="w-20 h-28 sm:w-28 sm:h-36 bg-white rounded-lg shadow-inner border-2 border-sos-dark/5 flex flex-col items-center justify-center relative overflow-hidden">
+    <div className="w-24 h-32 md:w-36 md:h-48 bg-white rounded-xl shadow-inner border-2 border-sos-dark/5 flex flex-col items-center justify-center relative overflow-hidden">
       <div className={`flex flex-col items-center justify-center transition-all duration-300 ${isSpinning ? 'spinning' : ''}`}>
         {isSpinning ? (
-          <div className="flex flex-col gap-8 sm:gap-10">
+          <div className="flex flex-col gap-12 md:gap-16">
             {SERVICE_ICONS.map((item, idx) => (
-              <img key={idx} src={item.image} alt={item.label} className="w-12 h-12 sm:w-20 sm:h-20 object-contain" />
+              <img key={idx} src={item.image} alt={item.label} className="w-16 h-16 md:w-24 md:h-24 object-contain" />
             ))}
             {SERVICE_ICONS.map((item, idx) => (
-              <img key={`dup-${idx}`} src={item.image} alt={item.label} className="w-12 h-12 sm:w-20 sm:h-20 object-contain" />
+              <img key={`dup-${idx}`} src={item.image} alt={item.label} className="w-16 h-16 md:w-24 md:h-24 object-contain" />
             ))}
           </div>
         ) : (
-          <div className="flex flex-col items-center animate-in zoom-in duration-300">
-            {/* Imagen reducida */}
-            <img src={icon.image} alt={icon.label} className="w-14 h-14 sm:w-20 sm:h-20 object-contain mb-2" />
-            {/* Texto más chico y oculto en muy pequeño */}
-            <span className="hidden sm:block text-sos-dark/30 font-black text-[10px] uppercase">{icon.label}</span>
+          <div className="flex flex-col items-center animate-in zoom-in duration-300 p-2">
+            {/* Imagen aumentada */}
+            <img src={icon.image} alt={icon.label} className="w-16 h-16 md:w-24 md:h-24 object-contain mb-3" />
+            {/* Texto visible y más legible en tablet */}
+            <span className="text-sos-dark/40 font-black text-[10px] md:text-xs uppercase text-center leading-tight px-1">{icon.label}</span>
           </div>
         )}
       </div>
-      
-      {/* Glare effect */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/10 pointer-events-none" />
+
+      {/* Glare effect más pronunciado */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-transparent to-black/15 pointer-events-none" />
       <div className="absolute inset-0 bg-gradient-to-r from-black/5 via-transparent to-black/5 pointer-events-none" />
     </div>
   );

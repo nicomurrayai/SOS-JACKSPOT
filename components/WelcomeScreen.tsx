@@ -39,7 +39,7 @@ const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ onStart }) => {
               onClick={onStart}
               className="group relative px-10 py-5 md:px-14 md:py-4 bg-[#FF2D20] text-white rounded-2xl shadow-[0_8px_0_0_#b91c1c] active:shadow-none active:translate-y-[8px] transition-all duration-150 ease-out hover:bg-[#ff4033]"
             >
-              <span className="relative z-10 text-2xl md:text-3xl font-black tracking-wide uppercase italic">
+              <span className="relative z-10 text-xl md:text-2xl font-black tracking-wide uppercase italic">
                 Empezar a Jugar
               </span>
               {/* Brillo interno */}
