@@ -96,9 +96,9 @@ const SlotMachine: React.FC<SlotMachineProps> = ({ onComplete }) => {
           <div
             onClick={!hasStarted ? startSpin : undefined}
             className={`
-            relative w-3 h-40 md:h-52 cursor-pointer transition-transform duration-500 origin-bottom
+            relative w-3 h-40 md:h-50 transition-transform duration-500 origin-bottom
             ${isLeverPulled ? 'rotate-180 scale-y-90' : 'rotate-0'}
-            ${hasStarted ? 'cursor-not-allowed opacity-80' : 'hover:scale-105 active:scale-95'}
+            ${hasStarted ? 'cursor-not-allowed' : 'cursor-pointer hover:scale-105 active:scale-95'}
         `}
             style={{ transformOrigin: 'bottom center' }}
           >
@@ -106,7 +106,7 @@ const SlotMachine: React.FC<SlotMachineProps> = ({ onComplete }) => {
             <div className="absolute inset-x-0 bottom-0 top-6 mx-auto w-3 bg-gradient-to-r from-gray-300 via-white to-gray-400 rounded-full border border-gray-500 shadow-md" />
 
             {/* La perilla (Reducida de w-16 a w-10/12) */}
-            <div className="absolute -top-3 -left-[14px] w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br from-red-500 via-red-600 to-red-800 shadow-[inset_0px_2px_4px_rgba(255,255,255,0.4),0px_2px_4px_rgba(0,0,0,0.6)] border border-red-900 z-10" />
+            <div className="absolute -top-3 -left-[14px] w-10 h-10 rounded-full bg-gradient-to-br from-red-500 via-red-600 to-red-800 shadow-[inset_0px_2px_4px_rgba(255,255,255,0.4),0px_2px_4px_rgba(0,0,0,0.6)] border border-red-900 z-10" />
           </div>
 
           {/* Pivote inferior (Reducido de w-12 a w-8/10) */}
