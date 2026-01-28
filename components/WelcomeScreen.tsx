@@ -25,7 +25,7 @@ const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ onStart }) => {
 
           {/* --- TEXTO CENTRAL Y BOTÓN --- */}
           <div className="lg:col-span-6 text-center flex flex-col items-center z-20">
-            <h1 className="text-2xl md:text-3xl  font-black text-gray-900 flex flex-col gap-4 mb-6 tracking-tight">
+            <h1 className="text-2xl md:text-3xl  font-black text-gray-900 flex flex-col gap-2 mb-6 tracking-tight">
               LA SUERTE ESTÁ <br />
               <span className="text-sos-orange">DE TU LADO</span>
             </h1>
@@ -37,9 +37,9 @@ const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ onStart }) => {
             {/* Botón CTA mejorado */}
             <button
               onClick={onStart}
-              className="group relative px-10 py-5 md:px-14 md:py-6 bg-[#FF2D20] text-white rounded-2xl shadow-[0_8px_0_0_#b91c1c] active:shadow-none active:translate-y-[8px] transition-all duration-150 ease-out hover:bg-[#ff4033]"
+              className="group relative px-10 py-5 md:px-14 md:py-4 bg-[#FF2D20] text-white rounded-2xl shadow-[0_8px_0_0_#b91c1c] active:shadow-none active:translate-y-[8px] transition-all duration-150 ease-out hover:bg-[#ff4033]"
             >
-              <span className="relative z-10 text-2xl md:text-4xl font-black tracking-wide uppercase italic">
+              <span className="relative z-10 text-2xl md:text-3xl font-black tracking-wide uppercase italic">
                 Empezar a Jugar
               </span>
               {/* Brillo interno */}
