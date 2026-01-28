@@ -8,7 +8,7 @@ const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ onStart }) => {
   return (
     <div className="w-full flex flex-col relative overflow-hidden font-sans">
       {/* --- CONTENIDO PRINCIPAL --- */}
-      <main className="flex-1 flex items-center justify-center relative z-10 px-4 py-20">
+      <main className="flex-1 flex items-center justify-center relative z-10 px-4 py-6">
         
         {/* Contenedor Grid para Desktop (Vehículo - Texto - Vehículo) */}
         <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
