@@ -65,8 +65,6 @@ const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ onStart }) => {
         </div>
       </main>
 
-      {/* Elemento decorativo de fondo (Brillo central) */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-orange-200/20 rounded-full blur-3xl -z-0 pointer-events-none" />
     </div>
   );
 };
