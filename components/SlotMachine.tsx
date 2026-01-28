@@ -149,8 +149,7 @@ const SlotMachine: React.FC<SlotMachineProps> = ({ onComplete }) => {
   );
 };
 
-// Componente Reel ajustado para ser más grande (Tablet size)
-// w-28 a w-36 (aprox 144px ancho) y h-36 a h-48 (aprox 192px alto)
+// Componente Reel con imágenes más grandes
 const Reel: React.FC<{ isSpinning: boolean; icon: ServiceIcon }> = ({ isSpinning, icon }) => {
   return (
     <div className="w-24 h-32 md:w-36 md:h-48 bg-white rounded-xl shadow-inner border-2 border-sos-dark/5 flex flex-col items-center justify-center relative overflow-hidden">
@@ -158,16 +157,16 @@ const Reel: React.FC<{ isSpinning: boolean; icon: ServiceIcon }> = ({ isSpinning
         {isSpinning ? (
           <div className="flex flex-col gap-12 md:gap-16">
             {SERVICE_ICONS.map((item, idx) => (
-              <img key={idx} src={item.image} alt={item.label} className="w-16 h-16 md:w-24 md:h-24 object-contain" />
+              <img key={idx} src={item.image} alt={item.label} className="w-20 h-20 md:w-28 md:h-28 object-contain" />
             ))}
             {SERVICE_ICONS.map((item, idx) => (
-              <img key={`dup-${idx}`} src={item.image} alt={item.label} className="w-16 h-16 md:w-24 md:h-24 object-contain" />
+              <img key={`dup-${idx}`} src={item.image} alt={item.label} className="w-20 h-20 md:w-28 md:h-28 object-contain" />
             ))}
           </div>
         ) : (
           <div className="flex flex-col items-center animate-in zoom-in duration-300 p-2">
-            {/* Imagen aumentada */}
-            <img src={icon.image} alt={icon.label} className="w-16 h-16 md:w-24 md:h-24 object-contain mb-3" />
+            {/* Imagen aumentada considerablemente */}
+            <img src={icon.image} alt={icon.label} className="w-20 h-20 md:w-28 md:h-28 object-contain mb-2" />
             {/* Texto visible y más legible en tablet */}
             <span className="text-sos-dark/40 font-black text-[10px] md:text-xs uppercase text-center leading-tight px-1">{icon.label}</span>
           </div>
