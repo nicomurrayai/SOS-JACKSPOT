@@ -25,7 +25,7 @@ const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ onStart }) => {
 
           {/* --- TEXTO CENTRAL Y BOTÓN --- */}
           <div className="lg:col-span-6 text-center flex flex-col items-center z-20">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-gray-900 flex flex-col gap-4 mb-6 tracking-tight">
+            <h1 className="text-2xl md:text-3xl  font-black text-gray-900 flex flex-col gap-4 mb-6 tracking-tight">
               LA SUERTE ESTÁ <br />
               <span className="text-sos-orange">DE TU LADO</span>
             </h1>
