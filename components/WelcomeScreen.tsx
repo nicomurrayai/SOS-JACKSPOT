@@ -31,7 +31,7 @@ const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ onStart }) => {
             </h1>
             
             <p className="text-lg md:text-xl text-gray-600 mb-10 max-w-lg mx-auto font-medium leading-relaxed">
-              ¡Prueba tu suerte con el Jackpot de SOS y gana premios exclusivos de asistencia vial y para el hogar!
+              ¡Proba tu suerte con el Jackpot de SOS y gana premios exclusivos de asistencia vial y para el hogar!
             </p>
 
             {/* Botón CTA mejorado */}
