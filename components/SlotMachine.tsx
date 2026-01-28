@@ -72,7 +72,7 @@ const SlotMachine: React.FC<SlotMachineProps> = ({ onComplete }) => {
         if (i === 2) {
           setTimeout(() => {
             onComplete(finalOutcome);
-          }, 1000);
+          }, 2000);
         }
       }, CONFIG.SPIN_DURATION + (i * CONFIG.REEL_DELAY));
     });
@@ -126,15 +126,15 @@ const Reel: React.FC<{ isSpinning: boolean; icon: ServiceIcon }> = ({ isSpinning
         {isSpinning ? (
           <div className="flex flex-col gap-12">
             {SERVICE_ICONS.map((item, idx) => (
-              <span key={idx} className="text-8xl">{item.emoji}</span>
+              <img key={idx} src={item.image} alt={item.label} className="w-32 h-32 md:w-40 md:h-40 object-contain" />
             ))}
             {SERVICE_ICONS.map((item, idx) => (
-              <span key={`dup-${idx}`} className="text-8xl">{item.emoji}</span>
+              <img key={`dup-${idx}`} src={item.image} alt={item.label} className="w-32 h-32 md:w-40 md:h-40 object-contain" />
             ))}
           </div>
         ) : (
           <div className="flex flex-col items-center animate-in zoom-in duration-300">
-            <span className="text-9xl mb-4">{icon.emoji}</span>
+            <img src={icon.image} alt={icon.label} className="w-32 h-32 md:w-40 md:h-40 object-contain mb-4" />
             <span className="text-sos-dark/30 font-black text-sm uppercase">{icon.label}</span>
           </div>
         )}

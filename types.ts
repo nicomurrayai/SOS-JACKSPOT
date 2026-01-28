@@ -8,7 +8,7 @@ export enum AppState {
 
 export interface ServiceIcon {
   id: string;
-  emoji: string;
+  image: string;
   label: string;
   color: string;
 }

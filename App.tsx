@@ -23,7 +23,6 @@ const App: React.FC = () => {
     setGameResult(result);
     setState(AppState.RESULT);
     
-    // In a real app, we would send this to a backend/API
     const lead: Lead = {
       email: userEmail,
       timestamp: Date.now(),
