@@ -20,7 +20,7 @@ const ResultScreen: React.FC<ResultScreenProps> = ({ result, onFinish }) => {
         <div className="space-y-8">
           <div className="relative inline-block">
             <div className="absolute -inset-12 bg-sos-orange/20 rounded-full blur-3xl animate-pulse" />
-            <h1 className="text-9xl font-black text-sos-orange relative z-10 drop-shadow-xl">
+            <h1 className="text-7xl font-black text-sos-orange relative z-10 drop-shadow-xl">
               ¡GANASTE!
             </h1>
           </div>
@@ -42,9 +42,7 @@ const ResultScreen: React.FC<ResultScreenProps> = ({ result, onFinish }) => {
         </div>
       ) : (
         <div className="space-y-8">
-          <h1 className="text-7xl md:text-8xl font-black text-sos-dark/20 uppercase italic">
-            ¡Casi lo logras!
-          </h1>
+   
           
           <div className="bg-white/50 backdrop-blur-sm p-12 rounded-[3rem] shadow-xl max-w-2xl mx-auto border-4 border-white">
              <div className="text-9xl mb-6 opacity-40">🤝</div>

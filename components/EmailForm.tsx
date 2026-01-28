@@ -51,7 +51,7 @@ const EmailForm: React.FC<EmailFormProps> = ({ onSubmit, onBack }) => {
         
         <button
           type="submit"
-          className="w-full py-6 bg-sos-dark text-white rounded-2xl text-3xl font-black hover:bg-sos-orange shadow-xl transition-all"
+          className="w-full py-6 text-white rounded-2xl text-3xl font-black bg-sos-orange shadow-xl transition-all"
         >
           RECLAMAR TIRO GRATIS
         </button>
