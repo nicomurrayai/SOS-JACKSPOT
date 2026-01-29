@@ -1,0 +1,18 @@
+import { mutation } from "./_generated/server";
+import { v } from "convex/values";
+
+export const createLead = mutation({
+  args: {
+    email: v.string(),
+    isWinner: v.boolean(),
+    prize: v.union(v.string(), v.null())
+  },
+  handler: async (ctx, args) => {
+    return await ctx.db.insert("leads", {
+      email: args.email,
+      isWinner: false,
+      prize: null,
+    });
+  },
+});
+

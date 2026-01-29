@@ -1,5 +1,5 @@
-
 import React, { useState } from 'react';
+
 
 interface EmailFormProps {
   onSubmit: (email: string) => void;
@@ -10,7 +10,8 @@ const EmailForm: React.FC<EmailFormProps> = ({ onSubmit, onBack }) => {
   const [email, setEmail] = useState('');
   const [error, setError] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) {
       setError('Por favor, ingresa tu correo');
@@ -30,7 +31,7 @@ const EmailForm: React.FC<EmailFormProps> = ({ onSubmit, onBack }) => {
         <h2 className="text-2xl font-black mb-4">¿QUERES JUGAR?</h2>
         <p className="text-lg text-sos-dark/60 font-semibold">Ingresa tu correo para activar la Máquina Jackpot de SOS</p>
       </div>
-      
+
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
           <input
@@ -48,14 +49,14 @@ const EmailForm: React.FC<EmailFormProps> = ({ onSubmit, onBack }) => {
             <p className="text-sos-orange font-bold text-center mt-4 text-xl animate-bounce">{error}</p>
           )}
         </div>
-        
+
         <button
           type="submit"
           className="w-full py-3 text-white rounded-2xl text-xl font-black bg-sos-orange shadow-xl transition-all"
         >
           RECLAMAR TIRO GRATIS
         </button>
-        
+
         <button
           type="button"
           onClick={onBack}

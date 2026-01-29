@@ -74,11 +74,13 @@ const SlotMachine: React.FC<SlotMachineProps> = ({ onComplete }) => {
         if (i === 2) {
           setTimeout(() => {
             onComplete(finalOutcome);
-          }, 2000);
+          }, 1500);
         }
       }, CONFIG.SPIN_DURATION + (i * CONFIG.REEL_DELAY));
     });
   };
+
+  
 
   return (
     // Aumenté max-w a 3xl y eliminé la reducción de escala para que se vea bien en Tablet

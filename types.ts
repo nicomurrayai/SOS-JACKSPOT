@@ -20,6 +20,6 @@ export interface GameResult {
 
 export interface Lead {
   email: string;
-  timestamp: number;
-  won: boolean;
+  isWinner: boolean;
+  prize: null | string
 }
