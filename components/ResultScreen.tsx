@@ -68,10 +68,7 @@ const ResultScreen: React.FC<ResultScreenProps> = ({ result, onFinish }) => {
 
             {/* Texto cuerpo reducido */}
             <p className="text-lg text-sos-dark/60 font-semibold mb-6 leading-snug">
-              Aunque no ganaste el jackpot, SOS siempre te protege. <br />
-              <span className="block mt-2 text-base">
-                Revisa tu correo para un <span className="text-sos-orange font-bold">10% de descuento</span>.
-              </span>
+              Aunque no ganaste el jackpot, SOS siempre te protege.
             </p>
 
             {/* Botón más compacto */}

@@ -15,7 +15,7 @@ export interface ServiceIcon {
 
 export interface GameResult {
   isWinner: boolean;
-  winningIcon?: ServiceIcon;
+  winningIcon?: ServiceIcon
 }
 
 export interface Lead {

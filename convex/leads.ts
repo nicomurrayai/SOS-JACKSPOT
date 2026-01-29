@@ -10,7 +10,7 @@ export const createLead = mutation({
   handler: async (ctx, args) => {
     return await ctx.db.insert("leads", {
       email: args.email,
-      isWinner: false,
+      isWinner: args.isWinner,
       prize: null,
     });
   },
