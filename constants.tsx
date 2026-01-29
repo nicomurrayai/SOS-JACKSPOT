@@ -10,9 +10,9 @@ export const SERVICE_ICONS: ServiceIcon[] = [
 ];
 
 export const CONFIG = {
-  WIN_PROBABILITY: 0.15, // 15% chance to win
-  SPIN_DURATION: 2000,   // ms
-  REEL_DELAY: 2000,       // stagger between reels
+  WIN_PROBABILITY: 0.15, 
+  SPIN_DURATION: 2000,   
+  REEL_DELAY: 2000, 
 };
 
 
