@@ -28,7 +28,7 @@ const EmailForm: React.FC<EmailFormProps> = ({ onSubmit, onBack }) => {
   return (
     <div className="w-full max-w-2xl bg-white p-4 rounded-[2.5rem] shadow-2xl animate-in slide-in-from-bottom-12 duration-500">
       <div className="text-center mb-6">
-        <h2 className="text-2xl font-black mb-3">¿QUERES JUGAR?</h2>
+        <h2 className="text-xl font-black mb-3">¿QUERES JUGAR?</h2>
         <p className="text-lg text-sos-dark/60 font-semibold">Ingresa tu correo para activar la Máquina Jackpot de SOS</p>
       </div>
 
@@ -42,7 +42,7 @@ const EmailForm: React.FC<EmailFormProps> = ({ onSubmit, onBack }) => {
               setError('');
             }}
             placeholder="tu@correo.com"
-            className="w-full px-8 py-4 text-2xl font-bold bg-sos-beige/50 border-4 border-transparent focus:border-sos-orange outline-none rounded-2xl transition-all text-center"
+            className="w-full px-8 py-4 text-lg font-bold bg-sos-beige/50 border-4 border-transparent focus:border-sos-orange outline-none rounded-2xl transition-all text-center"
             autoFocus
           />
           {error && (
