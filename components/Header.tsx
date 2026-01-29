@@ -3,7 +3,7 @@ import React from 'react';
 
 const Header: React.FC = () => {
   return (
-    <header className="p-8 flex justify-between items-center w-full z-10 max-w-5xl mx-auto">
+    <header className="pt-8 px-8 flex justify-between items-center w-full z-10 max-w-5xl mx-auto">
       <div className="flex items-center gap-4">
         <img src="/sos-logo.png" alt="SOS Logo" className="w-20 " />
       </div>
