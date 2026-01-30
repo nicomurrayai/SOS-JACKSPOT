@@ -33,7 +33,7 @@ const App: React.FC = () => {
       prize: result.prize
     };
 
-    await createLead({ email: lead.email, isWinner: lead.isWinner, prize: result.prize })
+    await createLead({ email: lead.email, isWinner: lead.isWinner, prize: result.prize ?? null })
 
   };
 
