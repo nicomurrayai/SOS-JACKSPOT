@@ -1,4 +1,4 @@
-import { mutation } from "./_generated/server";
+import { mutation, query } from "./_generated/server";
 import { v } from "convex/values";
 
 export const createLead = mutation({
@@ -16,3 +16,18 @@ export const createLead = mutation({
   },
 });
 
+export const getAllLeads = query({
+  args: {},
+  handler: async (ctx) => {
+    return await ctx.db.query("leads").collect();
+  },
+});
+
+export const getProbabilities = query({
+  args: {},
+  handler: async (ctx) => {
+    // Obtenemos la primera configuración disponible
+    const probabilities = await ctx.db.query("probabilities").first();
+    return probabilities;
+  },
+});
