@@ -30,10 +30,10 @@ const App: React.FC = () => {
     const lead: Lead = {
       email: userEmail,
       isWinner: result.isWinner,
-      prize: null
+      prize: result.prize
     };
 
-    await createLead({ email: lead.email, isWinner: lead.isWinner, prize: null })
+    await createLead({ email: lead.email, isWinner: lead.isWinner, prize: result.prize })
 
   };
 

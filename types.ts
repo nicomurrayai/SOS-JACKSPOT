@@ -15,11 +15,12 @@ export interface ServiceIcon {
 
 export interface GameResult {
   isWinner: boolean;
-  winningIcon?: ServiceIcon
+  prize?: string | null;
+  winningIcon?: ServiceIcon | null;
 }
 
 export interface Lead {
   email: string;
   isWinner: boolean;
-  prize: null | string
+  prize: null | string;
 }

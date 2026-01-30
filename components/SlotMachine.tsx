@@ -47,7 +47,7 @@ const SlotMachine: React.FC<SlotMachineProps> = ({ onComplete }) => {
 
       // Si el número aleatorio cae dentro del rango acumulado, este icono gana
       if (randomValue < cumulativeProbability) {
-        return { isWinner: true, winningIcon: icon };
+        return { isWinner: true, winningIcon: icon , prize:icon.label };
       }
     }
 
