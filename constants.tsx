@@ -10,9 +10,25 @@ export const SERVICE_ICONS: ServiceIcon[] = [
 ];
 
 export const CONFIG = {
-  WIN_PROBABILITY: 0.15, 
-  SPIN_DURATION: 2000,   
-  REEL_DELAY: 2000, 
+  WIN_PROBABILITY: 1,
+  SPIN_DURATION: 2000,
+  REEL_DELAY: 2500,
 };
 
-
+export const WIN_MESSAGES: Record<string, { title: string }> = {
+  sos: {
+    title: '¡Te ganaste un Voucher por $10.000 en Atalaya!'
+  },
+  grua: {
+    title: '¡Te ganaste un regalo de SOS!',
+  },
+  moto: {
+    title: '¡Te ganaste un regalo de SOS!',
+  },
+  moura: {
+    title: '¡Te ganaste un regalo de Moura!',
+  },
+  lusqtoff: {
+    title: '¡Te ganaste un regalo de Lüsqtoff!',
+  },
+};

@@ -22,8 +22,6 @@ const SlotMachine: React.FC<SlotMachineProps> = ({ onComplete }) => {
   const [isLeverPulled, setIsLeverPulled] = useState(false);
 
   const determineWin = (): GameResult => {
-    // 1. Probabilidad Global: 0.15%
-    // Usamos 0.0015 directamente o asegúrate que CONFIG.WIN_PROBABILITY valga 0.0015
     const isWinner = Math.random() < CONFIG.WIN_PROBABILITY;
 
     if (isWinner) {
@@ -108,7 +106,7 @@ const SlotMachine: React.FC<SlotMachineProps> = ({ onComplete }) => {
         if (i === REEL_COUNT - 1) {
           setTimeout(() => {
             onComplete(finalOutcome);
-          }, 1500);
+          }, 2000);
         }
       }, CONFIG.SPIN_DURATION + (i * CONFIG.REEL_DELAY));
     });
