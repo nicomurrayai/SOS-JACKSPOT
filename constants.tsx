@@ -10,7 +10,7 @@ export const SERVICE_ICONS: ServiceIcon[] = [
 ];
 
 export const CONFIG = {
-  WIN_PROBABILITY: 1,
+  WIN_PROBABILITY: 0.15,
   SPIN_DURATION: 2000,
   REEL_DELAY: 2500,
 };
