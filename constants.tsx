@@ -26,9 +26,9 @@ export const WIN_MESSAGES: Record<string, { title: string }> = {
     title: '¡Te ganaste un regalo de SOS!',
   },
   moura: {
-    title: '¡Te ganaste un regalo de Moura!',
+    title: '¡Te ganaste un premio de Moura!',
   },
   lusqtoff: {
-    title: '¡Te ganaste un regalo de Lüsqtoff!',
+    title: '¡Te ganaste un premio de Lüsqtoff!',
   },
 };
